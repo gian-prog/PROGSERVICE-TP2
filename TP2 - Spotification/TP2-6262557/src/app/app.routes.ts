@@ -5,9 +5,9 @@ import { ShowComponent } from './show/show.component';
 import { SongComponent } from './song/song.component';
 
 export const routes: Routes = [
-    {path: "", redirectTo: "album", pathMatch:"full"},
-    {path: "album", component: AlbumComponent},
+    {path: "", redirectTo: "/artist", pathMatch:"full"},
     {path: "artist", component: ArtistComponent},
+    {path: "album", component: AlbumComponent},
     {path: "show", component: ShowComponent},
     {path: "song", component: SongComponent}
 
