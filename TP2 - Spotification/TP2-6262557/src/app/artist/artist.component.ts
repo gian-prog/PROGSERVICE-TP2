@@ -18,14 +18,14 @@ export class ArtistComponent {
   spotifyToken?: string;
   artists: Artist[] = []
 
-  constructor(public spotify: SpotifyService){
+  constructor(public spotify: SpotifyService) {
 
   }
-  ngOnInit(){
+  ngOnInit() {
     this.spotify.connect()
   }
 
-  async searchArtist(): Promise<void>{
+  async searchArtist(): Promise<void> {
     this.artists.push(await this.spotify.searchArtist(this.artistName))
   }
 
