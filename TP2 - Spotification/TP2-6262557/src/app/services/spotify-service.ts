@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { Artist } from '../models/artist';
 import { Album } from '../models/album';
+import { Song } from '../models/song';
 
 const CLIENT_ID: string = "2ba044aa38564f58bcb78f894f42d6ac";
 const CLIENT_SECRET: string = "2908833300e6440485dcd7b9c9a55d7f";
@@ -60,5 +61,22 @@ export class SpotifyService {
     }
     return albums;
   }
+  async getSongs(albumId: string | null): Promise<Song[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.spotifyToken
+      })
+    };
+    let x = await lastValueFrom(this.http.get<any>("https://api.spotify.com/v1/albums/" + albumId, httpOptions));
+    console.log(x);
+
+    let songs: Song[] = [];
+    for (let i = 0; i < x.tracks.items.length; i++) {
+      songs.push(new Song(x.tracks.items[i].id, x.tracks.items[i].name));
+    }
+    return songs;
+  }
+
 
 }
