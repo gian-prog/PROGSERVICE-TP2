@@ -1,14 +1,14 @@
 <main>
     <div class="row">
         <div class="albums">
-            <h3>Albums de l'artiste {{artistName}}</h3>
+            <h3 translate [translateParams]="{x: artistName}">album.header</h3>
             <div class="row">
 
                 <!-- Liste d'albums d'un artiste choisi -->
                 <div *ngFor="let a of albums">
                     <h4>{{a.name}}</h4>
                     <img [src]="a.image" alt="a.name">
-                    <button [routerLink]="['/song', a.name, a.id]">Chansons</button>
+                    <button [routerLink]="['/song', a.name, a.id]" translate>album.song</button>
                 </div>
 
             </div>

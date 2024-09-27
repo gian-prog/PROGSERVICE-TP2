@@ -1,0 +1,21 @@
+{
+    "app":{
+      "template":  "I yoinked the teacher's template",
+    "rights": "© All rights reserved to Spotify, BandsInTown and Google"
+    },
+    "artist":{
+        "search":  "Search",
+        "text1": "Your artists",
+        "addArtist": "Add an artist",
+        "show": "Shows"
+      },
+      "album":{
+        "song":  "Songs",
+        "header": "Albums of the artist {{x}}"
+      },
+      "song":{
+          "album":  "Song of the album {{x}}",
+          "play": "Play",
+          "show": "Shows"
+        }
+    }

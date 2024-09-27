@@ -1,14 +1,14 @@
 <main>
     <div class="row">
         <div class="search">
-            <h3>Ajouter un artiste</h3>
+            <h3 translate>artist.addArtist</h3>
             <form>
                 <input type="text" name="artistName" placeholder="Nana Mouskouri" [(ngModel)]="artistName">
-                <button (click)="searchArtist()">Rechercher</button>
+                <button (click)="searchArtist()" translate>artist.search</button>
             </form>
         </div>
         <div class="display">
-            <h3>Vos artistes</h3>
+            <h3 translate>artist.text1</h3>
             <div class="row">
 
                 <!-- Liste d'artistes ajoutés aux favoris -->
@@ -16,7 +16,7 @@
                     <h4>{{a.name}}</h4>
                     <img [src]="a.image" [alt]="a.name">
                     <button [routerLink]="['/album', a.name, a.id]">Albums</button>
-                    <a [routerLink]="['/show']"><button>Concerts</button></a>
+                    <a [routerLink]="['/show']"><button translate>artist.show</button></a>
                 </div>
 
             </div>

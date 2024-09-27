@@ -1,5 +1,5 @@
 <main>
-    <h3>Chansons de l'album {{albumName}}</h3>
+    <h3 translate [translateParams]="{x: albumName}">song.album</h3>
     <div class="row">
         <div class="youtubePlayer">
             <img src="assets/images/yourubeplayer.png" alt="Youtube player">
@@ -10,7 +10,7 @@
                 <!-- Liste de chansons d'un album choisi -->
                 <div *ngFor="let c of songs">
                     <p>{{c.name}}</p>
-                    <button>Jouer</button>
+                    <button translate>song.play</button>
                 </div>
 
             </div>

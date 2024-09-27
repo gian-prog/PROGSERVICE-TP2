@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { SpotifyService } from '../services/spotify-service';
 import { Artist } from '../models/artist';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-artist',
   standalone: true,
-  imports: [FormsModule, RouterModule, RouterOutlet, CommonModule],
+  imports: [FormsModule, RouterModule, RouterOutlet, CommonModule, TranslateModule],
   templateUrl: './artist.component.html',
   styleUrl: './artist.component.css'
 })
@@ -18,8 +19,10 @@ export class ArtistComponent {
   spotifyToken?: string;
   artists: Artist[] = []
 
-  constructor(public spotify: SpotifyService) {
+  language : string = "fr";
 
+  constructor(public spotify: SpotifyService, public  translate : TranslateService) {     
+    this.translate.setDefaultLang(this.language)
   }
   ngOnInit() {
     this.spotify.connect()
