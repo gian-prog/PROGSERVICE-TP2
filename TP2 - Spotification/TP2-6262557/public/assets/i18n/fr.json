@@ -1,20 +1,25 @@
 {
-  "app":{
-    "template":  "J'ai yoink le template de l'enseignant",
+  "app": {
+    "template": "J'ai yoink le template de l'enseignant",
     "rights": "© Tous droits réservés à Spotify, BandsInTown et Google"
   },
-  "artist":{    "search":  "Rechercher",
+  "artist": {
+    "search": "Rechercher",
     "text1": "Vos artistes",
     "addArtist": "Ajouter un artiste",
     "show": "Concerts"
   },
-  "album":{
-    "song":  "Chansons",
+  "album": {
+    "song": "Chansons",
     "header": "Albums de l'artiste {{x}}"
   },
-  "song":{
-      "album":  "Chansons de l'album {{x}}",
-      "play": "Jouer",
-      "show": "Shows"
-    }
+  "song": {
+    "album": "Chansons de l'album {{x}}",
+    "play": "Jouer",
+    "show": "Shows"
+  },
+  "show": {
+    "title": "Concerts de l'artiste {{x}}",
+    "": ""
+  }
 }
