@@ -19,6 +19,8 @@ export class ArtistComponent {
   spotifyToken?: string;
   artists: Artist[] = []
 
+  jsonData: string | null = null
+
   language : string = "fr";
 
   constructor(public spotify: SpotifyService, public  translate : TranslateService) {     
@@ -26,10 +28,17 @@ export class ArtistComponent {
   }
   ngOnInit() {
     this.spotify.connect()
+    this.jsonData = localStorage.getItem("artist")
+    if(this.jsonData != null){
+      this.artists  = JSON.parse(this.jsonData)
+    }
   }
 
   async searchArtist(): Promise<void> {
     this.artists.push(await this.spotify.searchArtist(this.artistName))
+    this.saveArtist()
   }
-
+  saveArtist(){
+    localStorage.setItem ("artist", JSON.stringify(this.artists))
+  }
 }

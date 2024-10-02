@@ -16,7 +16,7 @@
                     <h4>{{a.name}}</h4>
                     <img [src]="a.image" [alt]="a.name">
                     <button [routerLink]="['/album', a.name, a.id]">Albums</button>
-                    <a [routerLink]="['/show']"><button translate>artist.show</button></a>
+                    <a [routerLink]="['/show', a.name]"><button translate>artist.show</button></a>
                 </div>
 
             </div>
