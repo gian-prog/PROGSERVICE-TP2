@@ -34,6 +34,7 @@ export class ShowComponent {
     if (this.artistName != null) {
       this.getShows(this.artistName)
     }
+
   }
 
   async getShows(artistName: string): Promise<void> {

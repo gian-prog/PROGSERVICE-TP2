@@ -20,6 +20,6 @@
   },
   "show": {
     "title": "Concerts de l'artiste {{x}}",
-    "": ""
+    "none": "Aucun concert à venir pour cet artiste."
   }
 }
