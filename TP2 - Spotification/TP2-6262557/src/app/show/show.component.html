@@ -1,7 +1,18 @@
 <main>
     <h3 translate [translateParams]="{x: artistName}">show.title</h3>
     <div class="row">
-        <img src="assets/images/googlemap.png" alt="Google Map" class="map">
+
+        <div class="map-container map">
+            <google-map class="map" [center]="center" [zoom]="zoom" height="400px">
+                <map-marker *ngFor="let show of shows"
+                            [position]="{ lat: toNumber(show.lat), lng: toNumber(show.long) }">
+                    <ng-template>
+                        <strong>{{ show.city }}, {{ show.country }}</strong>
+                        <p>{{ show.date }}</p>
+                    </ng-template>
+                </map-marker>
+            </google-map>
+        </div>
 
         <div class="shows">
 
@@ -11,9 +22,9 @@
                 <p>{{show.country}}</p>
                 <p>{{show.city}}</p>
             </div>
-            <ng-container *ngIf="shows.length === 0">
-                <p translate>show.error</p>
-            </ng-container>
+            <div *ngIf="shows.length === 0">
+                <p translate>show.none</p>
+            </div>
 
         </div>
 
